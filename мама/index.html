@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Для мамы ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #0f172a;
+      --bg2: #111827;
+      --card: rgba(255,255,255,0.08);
+      --text: #ffffff;
+      --muted: #d1d5db;
+      --accent: #f472b6;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(180deg, var(--bg), var(--bg2));
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 4s infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 24px;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 8vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: clamp(1.1rem, 4vw, 1.5rem);
+      max-width: 700px;
+      color: var(--muted);
+    }
+
+    .btn {
+      margin-top: 36px;
+      padding: 16px 36px;
+      border: none;
+      border-radius: 999px;
+      background: white;
+      color: #111827;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .3s, box-shadow .3s;
+      box-shadow: 0 10px 30px rgba(255,255,255,0.18);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    section {
+      padding: 88px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .text-block {
+      max-width: 820px;
+      font-size: clamp(1rem, 3.8vw, 1.25rem);
+      color: var(--muted);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      width: 100%;
+      max-width: 900px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      font-size: 1.05rem;
+      transition: transform .35s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .heart-wrap {
+      margin-top: 18px;
+    }
+
+    .heart {
+      font-size: 5rem;
+      cursor: pointer;
+      transition: transform .3s ease;
+      display: inline-block;
+    }
+
+    .heart:hover {
+      transform: scale(1.1);
+    }
+
+    .final-message {
+      display: none;
+      margin-top: 26px;
+      font-size: clamp(1.1rem, 4vw, 1.4rem);
+      color: var(--muted);
+      animation: fade 1.5s ease forwards;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      padding: 44px 20px 56px;
+      text-align: center;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 700px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+
+  <section class="hero">
+    <h1>Для моей мамы ❤️</h1>
+    <p>Есть человек, которому я обязан всем. Это моя мама.</p>
+    <button class="btn" onclick="document.getElementById('thanks').scrollIntoView({behavior: 'smooth'})">
+      Открыть
+    </button>
+  </section>
+
+  <section id="thanks">
+    <h2 class="section-title">Спасибо ❤️</h2>
+    <div class="text-block">
+      Мама… Иногда я не говорю вслух, насколько сильно я тебя люблю.
+      Но сегодня я хочу сказать тебе самое главное.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">За что я благодарен</h2>
+    <div class="cards">
+      <div class="card">❤️ Спасибо за жизнь</div>
+      <div class="card">❤️ Спасибо за любовь</div>
+      <div class="card">❤️ Спасибо за терпение</div>
+      <div class="card">❤️ Спасибо за поддержку</div>
+      <div class="card">❤️ Спасибо за то, что всегда верила в меня</div>
+      <div class="card">❤️ Спасибо за всё</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Мама, спасибо…</h2>
+    <div class="text-block">
+      Спасибо за бессонные ночи, когда ты переживала за меня.
+      <br><br>
+      Спасибо за каждый совет, который помогал мне становиться сильнее.
+      <br><br>
+      Спасибо за то, что никогда не переставала верить в меня, даже тогда,
+      когда я сам в себя не верил.
+      <br><br>
+      Спасибо за твою доброту, за твоё большое сердце и за ту любовь,
+      которую невозможно измерить словами.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Я хочу, чтобы ты знала</h2>
+    <div class="text-block">
+      Если однажды мне станет трудно — я всё равно буду идти вперёд,
+      потому что знаю, сколько сил ты вложила в меня.
+      <br><br>
+      Все мои победы — это и твои победы.
+      <br><br>
+      Я никогда не забуду, сколько ты сделала ради нашей семьи.
+      <br><br>
+      И сколько бы лет ни прошло, для меня ты всегда останешься
+      самым дорогим человеком.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Одно простое признание</h2>
+    <div class="text-block">
+      Мы не всегда говорим близким, как сильно их любим.
+      Иногда кажется, что они и так всё знают.
+      <br><br>
+      Но я не хочу, чтобы эти слова остались несказанными.
+      <br><br>
+      Мама… Спасибо тебе за жизнь. Спасибо за детство.
+      Спасибо за заботу. Спасибо за любовь.
+      И просто… спасибо за то, что ты есть.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Нажми на сердце ❤️</h2>
+    <div class="heart-wrap">
+      <div class="heart" onclick="showLove()">❤️</div>
+    </div>
+    <div class="final-message" id="finalMessage">
+      Спасибо… за всё.
+      <br><br>
+      Я очень тебя люблю.
+      <br><br>
+      ❤️
+    </div>
+  </section>
+
+  <footer>С любовью, твой сын ❤️</footer>
+
+  <script>
+    function showLove() {
+      document.getElementById('finalMessage').style.display = 'block';
+    }
+
+    const stars = document.getElementById('stars');
+    for (let i = 0; i < 180; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.left = Math.random() * 100 + 'vw';
+      star.style.top = Math.random() * 100 + 'vh';
+      star.style.animationDuration = (Math.random() * 4 + 2) + 's';
+      stars.appendChild(star);
+    }
+  </script>
+</body>
+</html>
